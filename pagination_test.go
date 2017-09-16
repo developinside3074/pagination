@@ -58,10 +58,10 @@ func TestCheckCurrentPage(t *testing.T) {
 
 }
 
-//Test if setPreviousPage set the correct value to PreviousPage
+//Test if setPreviousPage set the correct value to PreviousPage if CurrentPage is zero
 func TestSetPreviousPage(t *testing.T) {
 
-    currentPage := 1
+    currentPage := 0
     totalItems := 50
     perPage := 5
     rangePage := 5
