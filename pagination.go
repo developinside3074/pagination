@@ -28,7 +28,7 @@ func NewPagination(currentPage int, totalItems int, perPage int, rangePage int) 
 
 //Set or update total pages value of object
 func (p *Pagination) setTotalPages() {
-    if p.TotalItems == 0 || p.PerPage == 0{
+    if p.TotalItems <= 0 || p.PerPage <= 0{
         p.TotalPages = 0
     } else{
         p.TotalPages = math.Ceil(float64(p.TotalItems)/float64(p.PerPage))
