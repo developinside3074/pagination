@@ -93,3 +93,23 @@ func TestSetNextPage(t *testing.T) {
     }
 
 }
+
+
+//Test if setNextPage set the correct value to NextPage property
+//Even more if totalPages is equals one
+func TestSetNextPageIfDontHaveMorePages(t *testing.T) {
+
+    currentPage := 1
+    totalItems := 1
+    perPage := 5
+    rangePage := 5
+
+    pagination := NewPagination(currentPage, totalItems, perPage, rangePage)
+
+    pagination.setNextPage()
+
+    if pagination.NextPage != 0 {
+        t.Errorf("TestNextPage(): expected pagination.NextPage equals 0 but obtained %v", pagination.NextPage)
+    }
+
+}
