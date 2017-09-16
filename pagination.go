@@ -45,8 +45,10 @@ func (p *Pagination) checkCurrentPage() {
 
 //Set the value of previous page
 func (p *Pagination) setPreviousPage() {
-    p.checkCurrentPage()
-    p.PreviousPage = p.CurrentPage - 1;
+    if p.TotalItems > 0 {
+        p.checkCurrentPage()
+        p.PreviousPage = p.CurrentPage - 1;
+    }
 }
 
 //Set the value of next page
