@@ -4,9 +4,9 @@ import(
     "testing"
 )
 
-//
+//Test if setTotalPages set the correct value to TotalPages property
 func TestSetTotalPages(t *testing.T) {
-    
+
     currentPage := 1
     totalItems := 50
     perPage := 5
@@ -22,6 +22,7 @@ func TestSetTotalPages(t *testing.T) {
 
 }
 
+//Test if setTotalPages set the correct value to TotalPages property if TotalItems is zero
 func TestSetTotalPagesWithZero(t *testing.T) {
     
     currentPage := 1
@@ -39,6 +40,7 @@ func TestSetTotalPagesWithZero(t *testing.T) {
 
 }
 
+//Test if checkCurrentPage set the correct value to CurrentPage property if CurrentPage is zero
 func TestCheckCurrentPage(t *testing.T) {
     
     currentPage := 0
@@ -56,7 +58,7 @@ func TestCheckCurrentPage(t *testing.T) {
 
 }
 
-
+//Test if setPreviousPage set the correct value to PreviousPage
 func TestSetPreviousPage(t *testing.T) {
 
     currentPage := 1
