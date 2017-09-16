@@ -5,7 +5,7 @@ import(
 )
 
 //Define paginator type
-type Paginator struct{
+type Pagination struct{
     CurrentPage int
     PreviousPage int
     NextPage int
@@ -17,8 +17,8 @@ type Paginator struct{
 }
 
 //Initialize a new construct and return this instance
-func NewPaginator(currentPage int, totalItems int, perPage int, rangePage int) *Paginator{
-    return &Paginator{
+func NewPagination(currentPage int, totalItems int, perPage int, rangePage int) *Pagination{
+    return &Pagination{
         CurrentPage: currentPage,
         TotalItems: totalItems,
         PerPage: perPage,
@@ -27,7 +27,7 @@ func NewPaginator(currentPage int, totalItems int, perPage int, rangePage int) *
 }
 
 //Set or update total pages value of object
-func (p *Paginator) setTotalPages() {
+func (p *Pagination) setTotalPages() {
     if p.TotalItems == 0 || p.PerPage == 0{
         p.TotalPages = 0
     } else{

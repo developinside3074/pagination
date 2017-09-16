@@ -11,7 +11,7 @@ func TestSetTotalPages(t *testing.T) {
     perPage := 5
     rangePage := 5
 
-    paginator := NewPaginator(currentPage, totalItems, perPage, rangePage)
+    paginator := NewPagination(currentPage, totalItems, perPage, rangePage)
 
     paginator.setTotalPages()
 
@@ -28,7 +28,7 @@ func TestSetTotalPagesWithZero(t *testing.T) {
     perPage := 5
     rangePage := 5
 
-    paginator := NewPaginator(currentPage, totalItems, perPage, rangePage)
+    paginator := NewPagination(currentPage, totalItems, perPage, rangePage)
 
     paginator.setTotalPages()
 
