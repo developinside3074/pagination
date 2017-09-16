@@ -37,3 +37,20 @@ func TestSetTotalPagesWithZero(t *testing.T) {
     }
 
 }
+
+func TestCheckCurrentPage(t *testing.T) {
+    
+    currentPage := 0
+    totalItems := 0
+    perPage := 5
+    rangePage := 5
+
+    pagination := NewPagination(currentPage, totalItems, perPage, rangePage)
+
+    pagination.checkCurrentPage()
+
+    if pagination.CurrentPage <= 0 {
+        t.Errorf("TestCheckCurrentPage(): expected pagination.CurrrentPage equals 1 but obtained %v", pagination.CurrentPage)
+    }
+
+}

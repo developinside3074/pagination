@@ -34,3 +34,10 @@ func (p *Pagination) setTotalPages() {
         p.TotalPages = math.Ceil(float64(p.TotalItems)/float64(p.PerPage))
     }    
 }
+
+//Check the value of current page and set it to one if necessary
+func (p *Pagination) checkCurrentPage() {
+    if p.CurrentPage <= 0 {
+        p.CurrentPage = 1
+    }
+}
