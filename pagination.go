@@ -53,7 +53,6 @@ func (p *Pagination) setPreviousPage() {
 
 //Set the value of next page
 func (p *Pagination) setNextPage() {
-
     if p.TotalItems > 0 {
 
         if p.TotalPages == 0 {
@@ -65,6 +64,6 @@ func (p *Pagination) setNextPage() {
         } else {
             p.NextPage = p.CurrentPage + 1
         }
-
+        
     }
 }
