@@ -4,6 +4,7 @@ import(
     "testing"
 )
 
+//
 func TestSetTotalPages(t *testing.T) {
     currentPage := 1
     totalItems := 50
