@@ -23,6 +23,7 @@ func NewPagination(currentPage int, totalItems int, perPage int, rangePage int) 
         TotalItems: totalItems,
         PerPage: perPage,
         RangePage: rangePage,
+        NextPage: 1,
     }
 }
 
@@ -46,4 +47,22 @@ func (p *Pagination) checkCurrentPage() {
 func (p *Pagination) setPreviousPage() {
     p.checkCurrentPage()
     p.PreviousPage = p.CurrentPage - 1;
+}
+
+//Set the value of next page
+func (p *Pagination) setNextPage() {
+
+    if p.TotalItems > 0 {
+
+        if p.TotalPages == 0 {
+            p.setTotalPages()
+        }
+
+        if p.TotalPages == float64(p.NextPage){
+            p.NextPage = 0
+        } else {
+            p.NextPage = p.CurrentPage + 1
+        }
+
+    }
 }
