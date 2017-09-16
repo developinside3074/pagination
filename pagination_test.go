@@ -113,3 +113,29 @@ func TestSetNextPageIfDontHaveMorePages(t *testing.T) {
     }
 
 }
+
+//Test if SetValues set the correct values to Paginator object
+func TestSetValues(t *testing.T) {
+
+    currentPage := 1
+    totalItems := 50
+    perPage := 5
+    rangePage := 5
+
+    pagination := NewPagination(currentPage, totalItems, perPage, rangePage)
+
+    pagination.SetValues()
+
+    if pagination.NextPage != 2 {
+        t.Errorf("SetValues(): expected pagination.NextPage equals 2 but obtained %v", pagination.NextPage)
+    }
+
+    if pagination.PreviousPage != 0 {
+        t.Errorf("SetValues(): expected pagination.PreviousPage equals 0 but obtained %v", pagination.PreviousPage)
+    }
+
+    if pagination.TotalPages != 10 {
+        t.Errorf("SetValues(): expected pagination.TotalPages equals 10 but obtained %v", pagination.TotalPages)
+    }
+
+}

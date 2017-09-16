@@ -66,3 +66,11 @@ func (p *Pagination) setNextPage() {
 
     }
 }
+
+//Set Pagination Values
+func (p *Pagination) SetValues() {
+    p.setTotalPages()
+    p.checkCurrentPage()
+    p.setPreviousPage()
+    p.setNextPage()
+}
