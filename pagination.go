@@ -13,7 +13,6 @@ type Pagination struct{
     TotalPages float64
     TotalItems int
     RangePage int
-    HasMore bool
 }
 
 //Initialize a new construct and return this instance
@@ -64,6 +63,6 @@ func (p *Pagination) setNextPage() {
         } else {
             p.NextPage = p.CurrentPage + 1
         }
-        
+
     }
 }
