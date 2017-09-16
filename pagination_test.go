@@ -89,7 +89,7 @@ func TestSetNextPage(t *testing.T) {
     pagination.setNextPage()
 
     if pagination.NextPage != 2 {
-        t.Errorf("TestNextPage(): expected pagination.NextPage equals 1 but obtained %v", pagination.NextPage)
+        t.Errorf("TestNextPage(): expected pagination.NextPage equals 2 but obtained %v", pagination.NextPage)
     }
 
 }
