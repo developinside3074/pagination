@@ -54,3 +54,21 @@ func TestCheckCurrentPage(t *testing.T) {
     }
 
 }
+
+
+func TestSetPreviousPage(t *testing.T) {
+
+    currentPage := 1
+    totalItems := 50
+    perPage := 5
+    rangePage := 5
+
+    pagination := NewPagination(currentPage, totalItems, perPage, rangePage)
+
+    pagination.setPreviousPage()
+
+    if pagination.PreviousPage != 0 {
+        t.Errorf("TestPreviousPage(): expected pagination.PreviousPage equals 0 but obtained %v", pagination.PreviousPage)
+    }
+
+}

@@ -41,3 +41,9 @@ func (p *Pagination) checkCurrentPage() {
         p.CurrentPage = 1
     }
 }
+
+//Set the value of previous page
+func (p *Pagination) setPreviousPage() {
+    p.checkCurrentPage()
+    p.PreviousPage = p.CurrentPage - 1;
+}
