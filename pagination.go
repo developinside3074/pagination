@@ -14,6 +14,7 @@ type Pagination struct{
     TotalPages float64
     TotalItems int
     RangePage int
+    BottomItem int
 }
 
 //Initialize a new construct and return this instance
@@ -68,10 +69,21 @@ func (p *Pagination) setNextPage() {
     }
 }
 
+//Set bottom value of pagination
+func (p *Pagination) setBottomItem(){
+    p.checkCurrentPage()
+    if p.CurrentPage <= 1 {
+        p.BottomItem = 0
+    } else {
+        p.BottomItem = (p.CurrentPage -1) * p.PerPage
+    }
+}
+
 //Set Pagination Values
 func (p *Pagination) SetValues() {
     p.setTotalPages()
     p.checkCurrentPage()
     p.setPreviousPage()
+    p.setBottomItem()
     p.setNextPage()
 }

@@ -94,6 +94,42 @@ func TestSetNextPage(t *testing.T) {
 
 }
 
+//Test if setBottomItem set the correct vaule to BottomItem property
+func TestSetBottomItem(t *testing.T) {
+
+    currentPage := 1
+    totalItems := 50
+    perPage := 5
+    rangePage := 5
+
+    pagination := NewPagination(currentPage, totalItems, perPage, rangePage)
+
+    pagination.setBottomItem()
+
+    if pagination.BottomItem != 0 {
+        t.Errorf("TestBottomItem(): expected pagination.BottomItem equals 0 but obtained %v", pagination.BottomItem)
+    }
+
+}
+
+//Test if setBottomItem set the correct vaule to BottomItem property when current page is bigger than 1
+func TestSetBottomItemWithCurrentPageBiggerThanOne(t *testing.T) {
+
+    currentPage := 5
+    totalItems := 50
+    perPage := 5
+    rangePage := 5
+
+    pagination := NewPagination(currentPage, totalItems, perPage, rangePage)
+
+    pagination.setBottomItem()
+
+    if pagination.BottomItem != 20 {
+        t.Errorf("TestBottomItem(): expected pagination.BottomItem equals 200 but obtained %v", pagination.BottomItem)
+    }
+
+}
+
 
 //Test if setNextPage set the correct value to NextPage property
 //Even more if totalPages is equals one
