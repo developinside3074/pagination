@@ -1,5 +1,5 @@
 //Package pagination implements a simple and general porpouse pagination to a "list" of items
-package library
+package pagination
 
 import(
     "math"
