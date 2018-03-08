@@ -17,17 +17,6 @@ type Pagination struct {
 	BottomItem   int
 }
 
-//NewPagination initialize a new construct and return this instance
-func NewPagination(currentPage int, totalItems int, perPage int, rangePage int) *Pagination {
-	return &Pagination{
-		CurrentPage: currentPage,
-		TotalItems:  totalItems,
-		PerPage:     perPage,
-		RangePage:   rangePage,
-		NextPage:    1,
-	}
-}
-
 //Set or update total pages value of object
 func (p *Pagination) setTotalPages() {
 	if p.TotalItems <= 0 || p.PerPage <= 0 {
@@ -60,7 +49,7 @@ func (p *Pagination) setNextPage() {
 			p.setTotalPages()
 		}
 
-		if p.TotalPages == float64(p.NextPage) {
+		if p.TotalPages == float64(p.NextPage) || p.TotalPages == 1 {
 			p.NextPage = 0
 		} else {
 			p.NextPage = p.CurrentPage + 1
